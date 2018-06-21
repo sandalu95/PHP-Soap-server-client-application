@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:users" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:users">
+<types>
+<xsd:schema targetNamespace="urn:users"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+</xsd:schema>
+</types>
+<message name="getUserDetailsRequest">
+  <part name="id" type="xsd:string" /></message>
+<message name="getUserDetailsResponse">
+  <part name="data" type="xsd:string" /></message>
+<portType name="dukeServerPortType">
+  <operation name="getUserDetails">
+    <input message="tns:getUserDetailsRequest"/>
+    <output message="tns:getUserDetailsResponse"/>
+  </operation>
+</portType>
+<binding name="dukeServerBinding" type="tns:dukeServerPortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="getUserDetails">
+    <soap:operation soapAction="urn:users#getUserDetails" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:users" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:users" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="dukeServer">
+  <port name="dukeServerPort" binding="tns:dukeServerBinding">
+    <soap:address location="http://localhost/webservicephp/dukeuserlist.php"/>
+  </port>
+</service>
+</definitions>
