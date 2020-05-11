@@ -1,23 +1,31 @@
 body{
 	
     color: white;
-    padding: 2% 20%;
+    padding: 2% 10%;
     
 }
 h2{
-	text-align: center;
+	margin: 100px 50px 30px 290px;
+	font-weight: bold;
+	color: #000;
 }
 p{
 	color: black;
 }
 .jumbotron{
-	background-color: black;
+	background-image: url(../back.jpg);
+	width: 1030px;
 	padding-top: 8px;
 	padding-bottom: 8px;
+	margin-left: 50px;
+	padding-left: 130px;
+	color: #000;
 }
 
 .form-group{
 	margin-right: 10px;
+	margin-left: 180px;
+	
 }
 
 #id{
@@ -28,5 +36,5 @@ p{
 	margin-bottom: 15px;
 }
 div.col-xs-12.col-sm-6.col-md-4{
-	margin-left: 34%;
+	margin-left: 28%;
 }

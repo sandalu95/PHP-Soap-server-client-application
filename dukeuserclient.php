@@ -1,3 +1,4 @@
+<!-- php file. link the wsdl generated from server -->
 <?php
 
   ini_set('display_errors', true); 
@@ -50,8 +51,6 @@
     <h2>
       DukeNET
     </h2>
-    <br><br>
-    <h4>Enter <b>ID</b> and click <b>Fetch Details</b></h4>
   </div>
 
   <form class="form-inline" method = 'post' name='form1'>  
@@ -68,8 +67,7 @@
 
      <button type="submit" name='sub' class="btn btn-default"><i class="fas fa-search"></i> Fetch Details</button>
    </form>
-   <br><br>
-    <h4>User Details</h4>
+   <br>
   <?php 
 
   if($result!=false){ 
@@ -107,7 +105,7 @@
       }
     }
     else{
-      echo "Enter a valid id";
+        echo "<div style='height:350px;'></div>";
     }
   ?>
   </div>
